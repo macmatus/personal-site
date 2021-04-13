@@ -4,22 +4,28 @@ import Navigation from "./navigation"
 import { FiMenu } from "react-icons/fi"
 import * as headerStyles from "./header.module.scss"
 
+const isBrowser = typeof window !== "undefined"
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  let prevScrollpos = window.pageYOffset
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("header").classList.remove(headerStyles.active)
-    } else {
-      document.getElementById("header").classList.add(headerStyles.active)
-      document.getElementById("header").classList.add(headerStyles.scrolled)
+  if (isBrowser) {
+    let prevScrollpos = window.pageYOffset
+    window.onscroll = function () {
+      let currentScrollPos = window.pageYOffset
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").classList.remove(headerStyles.active)
+      } else {
+        document.getElementById("header").classList.add(headerStyles.active)
+        document.getElementById("header").classList.add(headerStyles.scrolled)
+      }
+      if (currentScrollPos === 0) {
+        document
+          .getElementById("header")
+          .classList.remove(headerStyles.scrolled)
+      }
+      prevScrollpos = currentScrollPos
     }
-    if (currentScrollPos === 0) {
-      document.getElementById("header").classList.remove(headerStyles.scrolled)
-    }
-    prevScrollpos = currentScrollPos
   }
 
   return (
