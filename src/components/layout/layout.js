@@ -1,34 +1,18 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "../header/header"
-import "./layout.scss"
 import Socials from "../socials/Socials"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+import "./layout.scss"
 
+const Layout = ({ children }) => {
+  useEffect(() => {
+    document.querySelector(".site-wrapper").style.opacity = "1"
+    document.querySelector(".site-wrapper").style.visibility = "visible"
+  }, [])
   return (
     <div className="site-wrapper">
-      <div className="header">
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      </div>
+      <Header />
       <main className="site-content ">{children}</main>
       <Socials />
       <footer className="footer">

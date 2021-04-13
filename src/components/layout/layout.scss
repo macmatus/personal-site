@@ -638,6 +638,9 @@ pre tt:after {
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5ms ease-in-out;
 
   @media screen and (min-width: $desktop) {
     padding: 1rem 4rem;

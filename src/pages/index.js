@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React, { useEffect } from "react"
 import Layout from "../components/layout/layout"
 import Projects from "../components/projects/projects"

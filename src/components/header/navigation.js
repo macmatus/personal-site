@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
 import * as navigationStyles from "./navigation.module.scss"
 
 const Navigation = ({ isMenuOpen, setIsMenuOpen }) => {
-  const [menuItems, setMenuItems] = useState([
+  const menuItems = [
     {
       name: "About",
       link: "#about",
@@ -20,7 +20,7 @@ const Navigation = ({ isMenuOpen, setIsMenuOpen }) => {
       name: "Contact",
       link: "#contact",
     },
-  ])
+  ]
 
   return (
     <nav
