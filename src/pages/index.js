@@ -17,7 +17,7 @@ const IndexPage = () => {
   }, [])
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Maciej Matusiak" />
       <section className={`${homeStyles.heroLanding}`}>
         <div>
           <span className="animate">I'm a</span>
