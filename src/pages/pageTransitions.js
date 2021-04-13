@@ -9,10 +9,10 @@ const pageTransitionsFunction = () => {
   const fastDuration = 1
   const easingMode = "Power4.easeOut"
 
-  const cleanUpFunction = className => {
-    const items = document.querySelectorAll(className)
-    items.forEach(item => (item.style = ""))
-  }
+  // const cleanUpFunction = className => {
+  //   const items = document.querySelectorAll(className)
+  //   items.forEach(item => (item.style = ""))
+  // }
 
   tl.from(".animate", {
     opacity: 0,
@@ -112,7 +112,7 @@ const pageTransitionsFunction = () => {
       "-=2"
     )
 
-  st.eventCallback("onComplete", () => cleanUpFunction(".card-anim"))
+  // st.eventCallback("onComplete", () => cleanUpFunction(".card-anim"))
 
   let st2 = gsap.timeline({
     scrollTrigger: {
@@ -141,7 +141,7 @@ const pageTransitionsFunction = () => {
       "-=2"
     )
 
-  st2.eventCallback("onComplete", () => cleanUpFunction(".snippet-anim"))
+  // st2.eventCallback("onComplete", () => cleanUpFunction(".snippet-anim"))
 
   let contactTrigger = gsap.timeline({
     scrollTrigger: {
