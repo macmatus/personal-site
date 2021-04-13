@@ -35,7 +35,11 @@ const Navigation = ({ isMenuOpen, setIsMenuOpen }) => {
         {menuItems.map((item, index) => {
           return (
             <li key={index}>
-              <Link to={item.link} onClick={() => setIsMenuOpen(false)}>
+              <Link
+                className="link"
+                to={item.link}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {item.name}
               </Link>
             </li>

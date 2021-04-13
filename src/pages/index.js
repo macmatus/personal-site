@@ -26,8 +26,10 @@ const IndexPage = () => {
             My name is Mac, based in Birmingham I specialize in building
             accessible, well performing and beautiful web applications.
             Currently, I'm a front-end developer at{" "}
-            <a href="https://www.topcashback.co.uk">TopCashback</a> focusing on
-            mobile-first development.{" "}
+            <a className="link" href="https://www.topcashback.co.uk">
+              TopCashback
+            </a>{" "}
+            focusing on mobile-first development.{" "}
           </p>
           <ContactBtn />
         </div>

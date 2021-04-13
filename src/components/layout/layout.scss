@@ -66,6 +66,20 @@ a {
   color: $accent;
   text-decoration: none;
   font-weight: 500;
+
+  &:hover {
+    &::after {
+      visibility: visible;
+      opacity: 1;
+      bottom: 1px;
+    }
+  }
+}
+
+.link {
+  color: $accent;
+  text-decoration: none;
+  font-weight: 500;
   position: relative;
 
   &::after {
@@ -81,15 +95,8 @@ a {
     transition: all 150ms ease-in-out;
     border-radius: 2px;
   }
-
-  &:hover {
-    &::after {
-      visibility: visible;
-      opacity: 1;
-      bottom: 1px;
-    }
-  }
 }
+
 a:active,
 a:hover {
   outline-width: 0;
