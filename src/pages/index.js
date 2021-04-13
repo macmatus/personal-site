@@ -8,14 +8,14 @@ import SEO from "../components/seo"
 import * as homeStyles from "../styles/home.module.scss"
 import About from "../components/about/About"
 
-import pageTransitionsFunction from "./pageTransitions"
+import pageTransitionsFunction from "../scripts/pageTransitions"
 import Contact from "../components/contact/Contact"
 import ContactBtn from "../components/contact/ContactBtn"
 
 const IndexPage = () => {
-  // useEffect(() => {
-  //   pageTransitionsFunction()
-  // }, [])
+  useEffect(() => {
+    pageTransitionsFunction()
+  }, [])
   return (
     <Layout>
       <SEO title="Home" />
