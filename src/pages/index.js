@@ -13,9 +13,9 @@ import Contact from "../components/contact/Contact"
 import ContactBtn from "../components/contact/ContactBtn"
 
 const IndexPage = () => {
-  useEffect(() => {
-    pageTransitionsFunction()
-  }, [])
+  // useEffect(() => {
+  //   pageTransitionsFunction()
+  // }, [])
   return (
     <Layout>
       <SEO title="Home" />
