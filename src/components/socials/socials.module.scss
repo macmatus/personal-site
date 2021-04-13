@@ -1,0 +1,85 @@
+@import "../../styles/variables.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0 0 0;
+
+  a {
+    color: $secondary;
+    font-size: 18px;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.email {
+  display: none;
+}
+
+@media screen and (min-width: 1600px) and (min-height: 600px) {
+  .icons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 70px;
+    bottom: 0;
+
+    a {
+      margin: 0 0 1rem 0;
+      transition: all 400ms $cubic-bezier;
+      &:hover {
+        color: $accent;
+        transform: translateY(-3px);
+      }
+      &::after {
+        content: none;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .email {
+    display: flex;
+    position: fixed;
+    right: 70px;
+    bottom: 0;
+    writing-mode: vertical-rl;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+    &:hover a {
+      color: $accent;
+      transform: translateY(-3px);
+    }
+
+    a {
+      transition: all 100ms ease-in-out;
+      font-weight: 300;
+      font-size: 1rem;
+      &:hover {
+        color: $accent;
+        transform: translateY(-3px);
+      }
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  .icons::after,
+  .email::after {
+    content: "";
+    height: 20vh;
+    width: 1px;
+    background: $secondary;
+    align-self: center;
+    margin-top: 1rem;
+    opacity: 0.3;
+  }
+}

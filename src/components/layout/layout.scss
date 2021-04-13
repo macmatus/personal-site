@@ -1,17 +1,27 @@
+// variables import
+@import "../../styles/variables.scss";
+
+// font imports
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap");
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em georgia, serif, sans-serif;
+  font: 16px "Heebo", sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
-  font-weight: normal;
+  color: $secondary;
+  background-color: #040e31;
+  //background: linear-gradient(129deg, rgb(0 8 37) 0%, rgba(8, 20, 62, 1) 100%);
+  font-family: "Heebo", sans-serif;
+  font-weight: 300;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -53,6 +63,32 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color: $accent;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $accent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 150ms ease-in-out;
+    border-radius: 2px;
+  }
+
+  &:hover {
+    &::after {
+      visibility: visible;
+      opacity: 1;
+      bottom: 1px;
+    }
+  }
 }
 a:active,
 a:hover {
@@ -81,8 +117,8 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Lora", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -593,5 +629,69 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+.site-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $desktop) {
+    padding: 1rem 4rem;
+  }
+}
+
+.site-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.button {
+  color: $accent;
+  font-weight: 400;
+  border: 2px solid $accent;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  display: inline-block;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 208, 0, 0.1) 50%,
+    rgba(212, 212, 212, 0) 50%
+  );
+  background-size: 250%;
+  background-position: right;
+  transition: background 250ms ease-in-out;
+
+  &::after {
+    content: none;
+  }
+
+  &:hover {
+    background-position: left;
+  }
+
+  &.small {
+    margin-top: 0;
+    display: inline;
+    color: $accent;
+    font-weight: 400;
+    padding: 0.4rem 1rem;
+    font-size: 0.925rem;
+    transition: background 200ms ease-in-out;
   }
 }

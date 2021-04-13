@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.heading {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 4rem auto 0;
+  padding: 2rem 0;
+
+  a {
+    font-size: 0.875rem;
+  }
+
+  h2 {
+    font-family: "Lora";
+    font-size: 1.55rem;
+    color: $accent-light;
+    margin: 0;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .heading {
+    margin: 0 auto;
+    padding: 6rem 0 2rem;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .heading {
+    padding: 9rem 0 2rem;
+    h2 {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .heading {
+    padding: 12rem 0 2rem;
+  }
+}

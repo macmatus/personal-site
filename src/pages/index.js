@@ -1,29 +1,44 @@
-import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
+import React, { useEffect } from "react"
+import Layout from "../components/layout/layout"
+import Projects from "../components/projects/projects"
+import Snippets from "../components/snippets/snippets"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+import * as homeStyles from "../styles/home.module.scss"
+import About from "../components/about/About"
+
+import pageTransitionsFunction from "./pageTransitions"
+import Contact from "../components/contact/Contact"
+import ContactBtn from "../components/contact/ContactBtn"
+
+const IndexPage = () => {
+  useEffect(() => {
+    pageTransitionsFunction()
+  }, [])
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <section className={`${homeStyles.heroLanding}`}>
+        <div>
+          <span className="animate">I'm a</span>
+          <h1 className="animate">Web Developer & Creative Thinker</h1>
+          <p className="animate">
+            My name is Mac, based in Birmingham I specialize in building
+            accessible, well performing and beautiful web applications.
+            Currently, I'm a front-end developer at{" "}
+            <a href="https://www.topcashback.co.uk">TopCashback</a> focusing on
+            mobile-first development.{" "}
+          </p>
+          <ContactBtn />
+        </div>
+      </section>
+      <About />
+      <Projects />
+      <Snippets />
+      <Contact />
+    </Layout>
+  )
+}
 
 export default IndexPage

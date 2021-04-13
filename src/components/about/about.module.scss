@@ -1,0 +1,103 @@
+@import "../../styles/variables.scss";
+
+.container {
+  margin: 0 auto;
+  max-width: $max-width;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  div {
+    max-width: 600px;
+  }
+  img {
+    display: none;
+  }
+}
+
+.skills,
+.hobbies {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+}
+
+.skills {
+  margin-bottom: 1.5rem;
+}
+
+.skill,
+.hobby {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  //   white-space: nowrap;
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    font-size: 4px;
+    margin-right: 0.5rem;
+    color: $accent;
+  }
+}
+
+@media screen and (min-width: $desktop-large) {
+  .content p {
+    font-size: 18px;
+  }
+  .content {
+    justify-content: space-between;
+    align-items: flex-end;
+    .image {
+      display: flex;
+      height: auto;
+      width: 100%;
+      max-width: 450px;
+      position: relative;
+
+      &:hover {
+        &::before {
+          left: -15px;
+          bottom: -15px;
+        }
+        img {
+          filter: grayscale(0);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        object-fit: contain;
+        margin: 0;
+        filter: grayscale(100);
+        transition: all 650ms $cubic-bezier;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -30px;
+        bottom: -30px;
+        width: 100%;
+        height: 100%;
+        background-color: $dark;
+        z-index: -1;
+        transition: all 350ms $cubic-bezier;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .content .image {
+    align-self: center;
+  }
+}

@@ -1,0 +1,108 @@
+@import "../../styles/variables.scss";
+
+.projects {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+
+  .card {
+    background: $dark;
+    border-radius: 10px;
+    overflow: hidden;
+    color: $accent-light;
+    transition: all 400ms $cubic-bezier;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 15px 15px 0px rgba(2, 6, 26, 0.3);
+
+      .card-content header h3 {
+        color: $accent;
+      }
+    }
+
+    img {
+      margin: 0;
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .card-content {
+      padding: 0.35rem 1rem 1rem;
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        h3 {
+          font-weight: 500;
+          font-size: 1.125rem;
+          margin: 0 auto 0.5rem 0;
+          line-height: 150%;
+          font-family: "Heebo";
+          padding-right: 0.75rem;
+        }
+        a {
+          color: $secondary;
+          margin-left: 0.75rem;
+          transition: all 200ms $cubic-bezier;
+
+          &:hover {
+            color: $accent;
+          }
+
+          &::after {
+            content: none;
+          }
+        }
+      }
+      p {
+        font-size: 0.875rem;
+        font-weight: 300;
+        margin: 0 0 0.5rem 0;
+      }
+      .technologies {
+        color: $accent-dimmed;
+        font-weight: 500;
+        font-size: 0.75rem;
+        width: 100%;
+        display: flex;
+
+        span {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: $desktop-large) {
+  .projects {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    div {
+      .card-content {
+        header {
+          h3 {
+            font-size: 18px;
+          }
+        }
+        p {
+          font-size: 16px;
+        }
+        .technologies {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
