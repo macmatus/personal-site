@@ -56,10 +56,14 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0;
 
   .menu-icon {
     display: flex;
-    width: 100%;
+    width: 28px;
     height: 2px;
     background: $secondary;
     border-radius: 5px;
@@ -69,7 +73,7 @@
     &::before,
     &::after {
       content: "";
-      width: 100%;
+      width: 28px;
       height: 2px;
       position: absolute;
       top: -9px;
@@ -86,9 +90,11 @@
     .menu-icon {
       background: transparent;
       &::before {
+        width: 26px;
         transform: rotate(45deg) translate(6px, 6px);
       }
       &::after {
+        width: 26px;
         transform: rotate(-45deg) translate(6px, -6px);
       }
     }
@@ -96,6 +102,10 @@
 }
 
 @media screen and (min-width: $tablet) {
+  .menu-wrapper {
+    display: none;
+  }
+
   .header {
     padding: 2rem 2rem;
     svg {

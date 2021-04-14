@@ -56,13 +56,13 @@ const Header = () => {
           </Link>
         </h1>
       </div>
-      <div
+      <button
         id="nav-icon"
         className={headerStyles.menuWrapper}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <span className={headerStyles.menuIcon}></span>
-      </div>
+      </button>
       <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </header>
   )
