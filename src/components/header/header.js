@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import Navigation from "./navigation"
 import { FiMenu } from "react-icons/fi"
@@ -17,6 +17,7 @@ const Header = () => {
         document.getElementById("header").classList.remove(headerStyles.active)
       } else {
         document.getElementById("header").classList.add(headerStyles.active)
+        document.getElementById("header").classList.add("blur")
         setTimeout(
           () =>
             document
@@ -29,10 +30,21 @@ const Header = () => {
         document
           .getElementById("header")
           .classList.remove(headerStyles.scrolled)
+        document.getElementById("header").classList.remove("blur")
       }
       prevScrollpos = currentScrollPos
     }
   }
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.parentElement.style.overflowY = "hidden"
+      document.getElementById("header").style.transform = "translateY(0)"
+    } else {
+      document.body.parentElement.style.overflowY = ""
+      document.getElementById("header").style.transform = ""
+    }
+  }, [isMenuOpen])
 
   return (
     <header className={`${headerStyles.header} fadein`} id="header">

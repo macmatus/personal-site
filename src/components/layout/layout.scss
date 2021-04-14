@@ -728,3 +728,7 @@ pre tt:after {
     transition: background 200ms ease-in-out;
   }
 }
+
+.blur {
+  backdrop-filter: blur(5px);
+}

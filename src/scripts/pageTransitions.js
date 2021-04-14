@@ -50,6 +50,8 @@ const pageTransitionsFunction = () => {
     ease: easingMode,
   })
 
+  tl.eventCallback("onComplete", () => cleanUpFunction(".fadein"))
+
   let aboutTrigger = gsap.timeline({
     scrollTrigger: {
       trigger: ".about-anim",
