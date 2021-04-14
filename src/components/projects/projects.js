@@ -7,7 +7,7 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"
 const Projects = () => {
   return (
     <div className="projects-anim">
-      <Heading title="Recent projects" link="/" name="projects" />
+      <Heading title="Recent projects" name="projects" />
       <section className={`${projectStyles.projects}`}>
         {projectsData.map(project => {
           return (

@@ -17,6 +17,7 @@
     border-radius: 10px;
     color: $accent-light;
     transition: all 400ms $cubic-bezier;
+    position: relative;
     cursor: pointer;
     &:hover {
       transform: translateY(-5px);
@@ -25,6 +26,21 @@
       header h3 {
         color: $accent;
       }
+    }
+
+    .primary-link {
+      color: transparent;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .secondary-link {
+      position: relative;
+      z-index: 2;
     }
 
     header {
@@ -48,10 +64,6 @@
 
         &:hover {
           color: $accent;
-        }
-
-        &::after {
-          content: none;
         }
       }
     }

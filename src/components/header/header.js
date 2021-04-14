@@ -17,7 +17,13 @@ const Header = () => {
         document.getElementById("header").classList.remove(headerStyles.active)
       } else {
         document.getElementById("header").classList.add(headerStyles.active)
-        document.getElementById("header").classList.add(headerStyles.scrolled)
+        setTimeout(
+          () =>
+            document
+              .getElementById("header")
+              .classList.add(headerStyles.scrolled),
+          150
+        )
       }
       if (currentScrollPos === 0) {
         document

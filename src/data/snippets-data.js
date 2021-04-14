@@ -7,12 +7,12 @@ const snippetsData = [
       "I have explored the use of modal pop ups using plain HTML and CSS, no javascript involved in this solution. Check out how I achievied it",
     tech: ["HTML", "CSS"],
     link: "https://github.com",
-    postLink: "https://github.com",
+    postLink: "no-js-modal",
   },
   {
     id: 4,
     date: "11 Mar 21",
-    title: "Creating a modal pop up without javascript",
+    title: "Lorem ipsum dolor sit amet, consectetur adipisicing",
     description:
       "I have explored the use of modal pop ups using plain HTML and CSS, no javascript involved in this solution. Check out how I achievied it",
     tech: ["HTML", "CSS"],
@@ -22,7 +22,7 @@ const snippetsData = [
   {
     id: 3,
     date: "24 Feb 21",
-    title: "Creating a modal pop up without javascript",
+    title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
     description:
       "I have explored the use of modal pop ups using plain HTML and CSS, no javascript involved in this solution. Check out how I achievied it",
     tech: ["HTML", "CSS"],
@@ -32,7 +32,7 @@ const snippetsData = [
   {
     id: 2,
     date: "11 Feb 20",
-    title: "Creating a modal pop up without javascript",
+    title: "Lorem ipsum dolor sit amet consectetur",
     description:
       "I have explored the use of modal pop ups using plain HTML and CSS, no javascript involved in this solution. Check out how I achievied it",
     tech: ["HTML", "CSS"],

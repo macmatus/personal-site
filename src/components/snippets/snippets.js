@@ -8,7 +8,7 @@ import { FaExternalLinkAlt, FaRegArrowAltCircleRight } from "react-icons/fa"
 const Snippets = () => {
   return (
     <section className={`${snippetsStyles.snippets} snippets-anim`}>
-      <Heading title="Recent Snippets" link="/" name="snippets" />
+      <Heading title="Recent Snippets" name="snippets" />
       <div className={snippetsStyles.snippetwrap}>
         {snippetsData.map(snippet => {
           return (
@@ -19,12 +19,20 @@ const Snippets = () => {
               <header>
                 <h3>{snippet.title}</h3>
                 {snippet.postLink ? (
-                  <a href="#/">
+                  <a
+                    href={`snippets/${snippet.postLink}`}
+                    className={snippetsStyles.secondaryLink}
+                  >
                     <FaRegArrowAltCircleRight />
                   </a>
                 ) : null}
                 {snippet.link ? (
-                  <a href="#/">
+                  <a
+                    href={snippet.link}
+                    className={snippetsStyles.secondaryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaExternalLinkAlt />
                   </a>
                 ) : null}
@@ -37,6 +45,12 @@ const Snippets = () => {
                     <p key={index}>{tech}</p>
                   ))}
                 </span>
+                <a
+                  href={`snippets/${snippet.postLink}`}
+                  className={snippetsStyles.primaryLink}
+                >
+                  snippet card link
+                </a>
               </footer>
             </div>
           )

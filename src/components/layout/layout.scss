@@ -658,6 +658,12 @@ pre tt:after {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+
+  .page404 {
+    text-align: center;
+  }
 }
 
 .footer {
@@ -668,6 +674,12 @@ pre tt:after {
   align-items: center;
   text-align: center;
   margin: 0.5rem 0 1rem;
+}
+
+.back-button {
+  position: fixed;
+  left: 40px;
+  top: 40px;
 }
 
 .button {
