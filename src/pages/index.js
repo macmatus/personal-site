@@ -23,9 +23,9 @@ const IndexPage = () => {
           <span className="animate">I'm a</span>
           <h1 className="animate">Web Developer & Creative Thinker</h1>
           <p className="animate">
-            My name is Mac, based in Birmingham I specialize in building
-            accessible, well performing and beautiful web applications.
-            Currently, I'm a front-end developer at{" "}
+            Based in Birmingham I specialize in building accessible, well
+            performing and beautiful web applications. Currently, I'm a UI/UX
+            developer at{" "}
             <a className="link" href="https://www.topcashback.co.uk">
               TopCashback
             </a>{" "}

@@ -4,9 +4,9 @@ const snippetsData = [
     date: "16 Mar 21",
     title: "Creating a modal pop up without javascript",
     description:
-      "I have explored the use of modal pop ups using plain HTML and CSS, no javascript involved in this solution. Check out how I achievied it",
+      "Today I had a go at creating a pop up modal without any javascript. In order to achieve that, I used the :target pseudo element to trigger opacity/visibility properties on a hidden div",
     tech: ["HTML", "CSS"],
-    link: "https://github.com",
+    link: "",
     postLink: "no-js-modal",
   },
   {

@@ -42,17 +42,17 @@ const Projects = () => {
                       >
                         <FaExternalLinkAlt />
                       </a>
-                      <a
-                        className={projectStyles.primaryLink}
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="project link to external site"
-                      >
-                        project link to external site
-                      </a>
                     </>
                   ) : null}
+                  <a
+                    className={projectStyles.primaryLink}
+                    href={project.link ? project.link : project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="project link to external site"
+                  >
+                    project link to external site
+                  </a>
                 </header>
                 <p>{project.description}</p>
                 <footer>

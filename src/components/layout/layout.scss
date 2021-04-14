@@ -680,6 +680,17 @@ pre tt:after {
   position: fixed;
   left: 40px;
   top: 40px;
+  color: $dark;
+  display: flex;
+  align-items: center;
+  transition: all 400ms $cubic-bezier;
+  svg {
+    margin-right: 0.5rem;
+  }
+  &:hover {
+    transform: translateX(-3px);
+    opacity: 0.5;
+  }
 }
 
 .button {

@@ -9,9 +9,9 @@ const projectsData = [
     image: img,
     title: "Digital vehicle service book",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    technologies: ["ReactJS", "CommerceJS", "Tailwind CSS"],
-    link: "https://twitter.com",
+      "This project is still in progress, however it soon will be avaiable for preview. For now, check out the Github repo for a sneak peek",
+    technologies: ["React", "MaterialUI", "HTML", "SCSS"],
+    link: "",
     githubLink: "https://github.com/",
   },
   {
