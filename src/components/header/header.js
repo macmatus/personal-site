@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import Navigation from "./navigation"
-import { FiMenu } from "react-icons/fi"
 import * as headerStyles from "./header.module.scss"
 
 const isBrowser = typeof window !== "undefined"
@@ -40,9 +39,11 @@ const Header = () => {
     if (isMenuOpen) {
       document.body.parentElement.style.overflowY = "hidden"
       document.getElementById("header").style.transform = "translateY(0)"
+      document.getElementById("nav-icon").classList.add(headerStyles.active)
     } else {
       document.body.parentElement.style.overflowY = ""
       document.getElementById("header").style.transform = ""
+      document.getElementById("nav-icon").classList.remove(headerStyles.active)
     }
   }, [isMenuOpen])
 
@@ -55,7 +56,13 @@ const Header = () => {
           </Link>
         </h1>
       </div>
-      <FiMenu size={28} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+      <div
+        id="nav-icon"
+        className={headerStyles.menuWrapper}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <span className={headerStyles.menuIcon}></span>
+      </div>
       <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </header>
   )
