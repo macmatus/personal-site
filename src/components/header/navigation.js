@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
 import * as navigationStyles from "./navigation.module.scss"
-import resume from "../../images/resume.pdf"
 
 const Navigation = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuItems = [
@@ -48,7 +47,7 @@ const Navigation = ({ isMenuOpen, setIsMenuOpen }) => {
         })}
         <li>
           <a
-            href={resume}
+            href={`/resume.pdf`}
             rel="noopener noreferrer"
             target="_blank"
             className="button"
